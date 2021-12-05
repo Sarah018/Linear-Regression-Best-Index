@@ -1,20 +1,20 @@
-%¸ÃÎÄ¼şµÄ×÷ÓÃÊÇ»­³öÎÄ¼ş¼ĞÏÂËùÓĞÎÄ¼şµÄÍ¼Æ¬
-%Pt_Subs = 'D:\yunxia\ML\»Ø¹é ÀÏ¹«\resultR1toR2';%´æ·Å´ı´¦ÀíÊı¾İµÄÂ·¾¶
-Pt_Subs = 'D:\yunxia\ML\huigui ÀÏ¹«\result_equ7';%´æ·Å´ı´¦ÀíÊı¾İµÄÂ·¾¶
-Nm_Vd = [];%´æ·ÅÎÄ¼şÃûµÄ½á¹¹Ìå
-Fd_Subs = dir(Pt_Subs);%ÌáÈ¡ËùÓĞÎÄ¼ş
-fL = size(Fd_Subs,1);%Í³¼ÆÎÄ¼ş¸öÊı
+%è¯¥æ–‡ä»¶çš„ä½œç”¨æ˜¯ç”»å‡ºæ–‡ä»¶å¤¹ä¸‹æ‰€æœ‰æ–‡ä»¶çš„å›¾ç‰‡
+%Pt_Subs = 'D:\yunxia\ML\å›å½’\resultR1toR2';%å­˜æ”¾å¾…å¤„ç†æ•°æ®çš„è·¯å¾„
+Pt_Subs = 'D:\yunxia\ML\huigui\result_equ7';%å­˜æ”¾å¾…å¤„ç†æ•°æ®çš„è·¯å¾„
+Nm_Vd = [];%å­˜æ”¾æ–‡ä»¶åçš„ç»“æ„ä½“
+Fd_Subs = dir(Pt_Subs);%æå–æ‰€æœ‰æ–‡ä»¶
+fL = size(Fd_Subs,1);%ç»Ÿè®¡æ–‡ä»¶ä¸ªæ•°
 for i = 3:fL
-    Nm_Vd{i-2,1} = Fd_Subs(i).name;%µ¥¶ÀÌáÈ¡³öÎÄ¼şÃûÊôĞÔ   
+    Nm_Vd{i-2,1} = Fd_Subs(i).name;%å•ç‹¬æå–å‡ºæ–‡ä»¶åå±æ€§   
 end
 
 for i=1:1:5
     nm_vd = Nm_Vd{i,1};
-    %Local = strcat('D:\yunxia\ML\»Ø¹é ÀÏ¹«\resultR1toR2\',nm_vd);
-    Local = strcat('D:\yunxia\ML\huigui ÀÏ¹«\result_equ7\',nm_vd);
+    %Local = strcat('D:\yunxia\ML\å›å½’\resultR1toR2\',nm_vd);
+    Local = strcat('D:\yunxia\ML\huigui\result_equ7\',nm_vd);
     load(Local);
     R_matrix;
-    %ÕâÀïÓ¦¸Ã¶Á½øÀ´¾ÍÊÇR_matrixÁË
+    %è¿™é‡Œåº”è¯¥è¯»è¿›æ¥å°±æ˜¯R_matrixäº†
     R_matrix_figure = zeros(1000,1000);
     R_matrix_figure(400:1000,400:1000) = abs(R_matrix);
     % x = [1:size(datas,1)];
@@ -26,7 +26,7 @@ for i=1:1:5
     set(rgb, 'LineStyle','none');
     axis([400 1000 400 1000]);
     nm_vd = nm_vd(1:end-4);
-    %savename = strcat('D:\yunxia\ML\»Ø¹é ÀÏ¹«\figureR1toR2\',nm_vd,'.jpeg');
-    savename = strcat('D:\yunxia\ML\huigui ÀÏ¹«\figure_equ7\',nm_vd,'.jpeg');
+    %savename = strcat('D:\yunxia\ML\å›å½’\figureR1toR2\',nm_vd,'.jpeg');
+    savename = strcat('D:\yunxia\ML\huigui\figure_equ7\',nm_vd,'.jpeg');
     print(1,'-djpeg',savename);
 end
