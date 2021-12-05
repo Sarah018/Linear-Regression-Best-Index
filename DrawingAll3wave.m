@@ -1,23 +1,23 @@
-%¸ÃÎÄ¼şµÄ×÷ÓÃÊÇ»­³öÎÄ¼ş¼ĞÏÂËùÓĞÎÄ¼şµÄÍ¼Æ¬
-%Pt_Subs = 'D:\yunxia\ML\»Ø¹é ÀÏ¹«\resultR1toR2';%´æ·Å´ı´¦ÀíÊı¾İµÄÂ·¾¶
-Pt_Subs = 'D:\yunxia\ML\huigui ÀÏ¹«\resultR1proR2';%´æ·Å´ı´¦ÀíÊı¾İµÄÂ·¾¶
-Nm_Vd = [];%´æ·ÅÎÄ¼şÃûµÄ½á¹¹Ìå
-Fd_Subs = dir(Pt_Subs);%ÌáÈ¡ËùÓĞÎÄ¼ş
-fL = size(Fd_Subs,1);%Í³¼ÆÎÄ¼ş¸öÊı
+%è¯¥æ–‡ä»¶çš„ä½œç”¨æ˜¯ç”»å‡ºæ–‡ä»¶å¤¹ä¸‹æ‰€æœ‰æ–‡ä»¶çš„å›¾ç‰‡
+%Pt_Subs = 'D:\yunxia\ML\å›å½’\resultR1toR2';%å­˜æ”¾å¾…å¤„ç†æ•°æ®çš„è·¯å¾„
+Pt_Subs = 'D:\yunxia\ML\huigui\resultR1proR2';%å­˜æ”¾å¾…å¤„ç†æ•°æ®çš„è·¯å¾„
+Nm_Vd = [];%å­˜æ”¾æ–‡ä»¶åçš„ç»“æ„ä½“
+Fd_Subs = dir(Pt_Subs);%æå–æ‰€æœ‰æ–‡ä»¶
+fL = size(Fd_Subs,1);%ç»Ÿè®¡æ–‡ä»¶ä¸ªæ•°
 for i = 3:fL
-    Nm_Vd{i-2,1} = Fd_Subs(i).name;%µ¥¶ÀÌáÈ¡³öÎÄ¼şÃûÊôĞÔ   
+    Nm_Vd{i-2,1} = Fd_Subs(i).name;%å•ç‹¬æå–å‡ºæ–‡ä»¶åå±æ€§   
 end
 
 for i=1:1:5
     nm_vd = Nm_Vd{i,1};
-    %Local = strcat('D:\yunxia\ML\»Ø¹é ÀÏ¹«\resultR1toR2\',nm_vd);
-    Local = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultR1proR2\',nm_vd);
+    %Local = strcat('D:\yunxia\ML\å›å½’\resultR1toR2\',nm_vd);
+    Local = strcat('D:\yunxia\ML\huigui\resultR1proR2\',nm_vd);
     load(Local);
     R_matrix;
     R_matrix = abs(R_matrix);
-    %ÕâÀïÓ¦¸Ã¶Á½øÀ´¾ÍÊÇR_matrixÁË
+    %è¿™é‡Œåº”è¯¥è¯»è¿›æ¥å°±æ˜¯R_matrixäº†
     nm_vd_wave = Nm_Vd{i+10,1};
-    Local = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultR1proR2\',nm_vd_wave);
+    Local = strcat('D:\yunxia\ML\huigui\resultR1proR2\',nm_vd_wave);
     load(Local);
     wave_selected;
 
@@ -43,10 +43,10 @@ for i=1:1:5
         set(rgb, 'LineStyle','none');
         axis([400 1000 400 1000]);
         nm_vd = nm_vd(1:end-4);
-        %savename = strcat('D:\yunxia\ML\»Ø¹é ÀÏ¹«\figureR1toR2\',nm_vd,'.jpeg');
-        savename = strcat('D:\yunxia\ML\huigui ÀÏ¹«\figureR1proR2\',nm_vd,num2str(j),'.jpeg');
+        %savename = strcat('D:\yunxia\ML\å›å½’\figureR1toR2\',nm_vd,'.jpeg');
+        savename = strcat('D:\yunxia\ML\huigui\figureR1proR2\',nm_vd,num2str(j),'.jpeg');
         print(1,'-djpeg',savename);
-        %½«Ã¿¸öÎÄ¼ş¶ÔÓ¦µÄÈı¸ö×î´óÖµ²¨³¤¶ÔÓ¦µÄ¾ØÕó´æÎªexcel
+        %å°†æ¯ä¸ªæ–‡ä»¶å¯¹åº”çš„ä¸‰ä¸ªæœ€å¤§å€¼æ³¢é•¿å¯¹åº”çš„çŸ©é˜µå­˜ä¸ºexcel
         R_matrix_excel = zeros(601,601);
         if j==1
             R_matrix_excel(:,:) = R_matrix(wave_max(j),:,:);
@@ -57,7 +57,7 @@ for i=1:1:5
         end
         
         
-        savename2 = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultExcel_R1proR2\',nm_vd,num2str(j),'.xlsx');%´æÎªxlsÎÄ¼ş
+        savename2 = strcat('D:\yunxia\ML\huigui\resultExcel_R1proR2\',nm_vd,num2str(j),'.xlsx');%å­˜ä¸ºxlsæ–‡ä»¶
         %savename(end-3:end) = [];
         %save(savename,'datas');
         xlswrite(savename2,R_matrix_excel);
@@ -66,12 +66,12 @@ end
 
 for i=6:1:10
     nm_vd = Nm_Vd{i,1};
-    %Local = strcat('D:\yunxia\ML\»Ø¹é ÀÏ¹«\resultR1toR2\',nm_vd);
-    Local = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultR1proR2\',nm_vd);
+    %Local = strcat('D:\yunxia\ML\å›å½’\resultR1toR2\',nm_vd);
+    Local = strcat('D:\yunxia\ML\huigui\resultR1proR2\',nm_vd);
     datas = load(Local);
     datas = datas.R_max;
     nm_vd = nm_vd(1:end-4);
-    savename = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultExcel_R1proR2\',nm_vd,'.xlsx');%´æÎªxlsÎÄ¼ş
+    savename = strcat('D:\yunxia\ML\huigui\resultExcel_R1proR2\',nm_vd,'.xlsx');%å­˜ä¸ºxlsæ–‡ä»¶
     %savename(end-3:end) = [];
     %save(savename,'datas');
     xlswrite(savename,datas);
@@ -79,12 +79,12 @@ end
 
 for i=11:1:15
     nm_vd = Nm_Vd{i,1};
-    %Local = strcat('D:\yunxia\ML\»Ø¹é ÀÏ¹«\resultR1toR2\',nm_vd);
-    Local = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultR1proR2\',nm_vd);
+    %Local = strcat('D:\yunxia\ML\å›å½’\resultR1toR2\',nm_vd);
+    Local = strcat('D:\yunxia\ML\huigui\resultR1proR2\',nm_vd);
     datas = load(Local);
     datas = datas.wave_selected;
     nm_vd = nm_vd(1:end-4);
-    savename = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultExcel_R1proR2\',nm_vd,'.xlsx');%´æÎªxlsÎÄ¼ş
+    savename = strcat('D:\yunxia\ML\huigui\resultExcel_R1proR2\',nm_vd,'.xlsx');%å­˜ä¸ºxlsæ–‡ä»¶
     %savename(end-3:end) = [];
     %save(savename,'datas');
     xlswrite(savename,datas);
