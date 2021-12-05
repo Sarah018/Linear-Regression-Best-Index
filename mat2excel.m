@@ -1,21 +1,21 @@
-%Pt_Subs = 'D:\yunxia\ML\»Ø¹é ÀÏ¹«\resultR1toR2';%´æ·Å´ı´¦ÀíÊı¾İµÄÂ·¾¶
-Pt_Subs = 'D:\yunxia\ML\huigui ÀÏ¹«\resultR1toR2';%´æ·Å´ı´¦ÀíÊı¾İµÄÂ·¾¶
-Nm_Vd = [];%´æ·ÅÎÄ¼şÃûµÄ½á¹¹Ìå
-Fd_Subs = dir(Pt_Subs);%ÌáÈ¡ËùÓĞÎÄ¼ş
-fL = size(Fd_Subs,1);%Í³¼ÆÎÄ¼ş¸öÊı
+%Pt_Subs = 'D:\yunxia\ML\å›å½’\resultR1toR2';%å­˜æ”¾å¾…å¤„ç†æ•°æ®çš„è·¯å¾„
+Pt_Subs = 'D:\yunxia\ML\huigui\resultR1toR2';%å­˜æ”¾å¾…å¤„ç†æ•°æ®çš„è·¯å¾„
+Nm_Vd = [];%å­˜æ”¾æ–‡ä»¶åçš„ç»“æ„ä½“
+Fd_Subs = dir(Pt_Subs);%æå–æ‰€æœ‰æ–‡ä»¶
+fL = size(Fd_Subs,1);%ç»Ÿè®¡æ–‡ä»¶ä¸ªæ•°
 for i = 3:fL
-    Nm_Vd{i-2,1} = Fd_Subs(i).name;%µ¥¶ÀÌáÈ¡³öÎÄ¼şÃûÊôĞÔ   
+    Nm_Vd{i-2,1} = Fd_Subs(i).name;%å•ç‹¬æå–å‡ºæ–‡ä»¶åå±æ€§   
 end
 
 for i=1:1:5
     nm_vd = Nm_Vd{i,1};
-    %Local = strcat('D:\yunxia\ML\»Ø¹é ÀÏ¹«\resultR1toR2\',nm_vd);
-    Local = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultR1toR2\',nm_vd);
+    %Local = strcat('D:\yunxia\ML\å›å½’\resultR1toR2\',nm_vd);
+    Local = strcat('D:\yunxia\ML\huigui\resultR1toR2\',nm_vd);
     datas = load(Local);
     datas = datas.R_matrix;
     datas(isnan(datas))=0;
     nm_vd = nm_vd(1:end-4);
-    savename = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultExcel_R1toR2\',nm_vd,'.xlsx');%´æÎªxlsÎÄ¼ş
+    savename = strcat('D:\yunxia\ML\huigui\resultExcel_R1toR2\',nm_vd,'.xlsx');%å­˜ä¸ºxlsæ–‡ä»¶
     %savename(end-3:end) = [];
     %save(savename,'datas');
     xlswrite(savename,datas);
@@ -23,12 +23,12 @@ end
 
 for i=6:1:10
     nm_vd = Nm_Vd{i,1};
-    %Local = strcat('D:\yunxia\ML\»Ø¹é ÀÏ¹«\resultR1toR2\',nm_vd);
-    Local = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultR1toR2\',nm_vd);
+    %Local = strcat('D:\yunxia\ML\å›å½’\resultR1toR2\',nm_vd);
+    Local = strcat('D:\yunxia\ML\huigui\resultR1toR2\',nm_vd);
     datas = load(Local);
     datas = datas.R_max;
     nm_vd = nm_vd(1:end-4);
-    savename = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultExcel_R1toR2\',nm_vd,'.xlsx');%´æÎªxlsÎÄ¼ş
+    savename = strcat('D:\yunxia\ML\huigui\resultExcel_R1toR2\',nm_vd,'.xlsx');%å­˜ä¸ºxlsæ–‡ä»¶
     %savename(end-3:end) = [];
     %save(savename,'datas');
     xlswrite(savename,datas);
@@ -36,12 +36,12 @@ end
 
 for i=11:1:15
     nm_vd = Nm_Vd{i,1};
-    %Local = strcat('D:\yunxia\ML\»Ø¹é ÀÏ¹«\resultR1toR2\',nm_vd);
-    Local = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultR1toR2\',nm_vd);
+    %Local = strcat('D:\yunxia\ML\å›å½’\resultR1toR2\',nm_vd);
+    Local = strcat('D:\yunxia\ML\huigui\resultR1toR2\',nm_vd);
     datas = load(Local);
     datas = datas.wave_selected;
     nm_vd = nm_vd(1:end-4);
-    savename = strcat('D:\yunxia\ML\huigui ÀÏ¹«\resultExcel_R1toR2\',nm_vd,'.xlsx');%´æÎªxlsÎÄ¼ş
+    savename = strcat('D:\yunxia\ML\huigui\resultExcel_R1toR2\',nm_vd,'.xlsx');%å­˜ä¸ºxlsæ–‡ä»¶
     %savename(end-3:end) = [];
     %save(savename,'datas');
     xlswrite(savename,datas);
