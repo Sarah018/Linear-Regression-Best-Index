@@ -1,26 +1,26 @@
-%¸ÃÎÄ¼şµÄ×÷ÓÃÊÇÑ¡³ö3¸ö²¨¶Î£¬ÊÇµÄÊ½×Ó   ÓëÊä³öÏà¹ØĞÔ×î¸ß
-%¸ÃÎÄ¼şµÄ×÷ÓÃÊÇÇóÒ»½×µ¼Êı
-% Pt_Subs = 'E:\yunxia\MLÓ¦ÓÃ\ÎŞ°êº£É£·´ÉäÂÊ¾ùÖµ';%´æ·Å´ı´¦ÀíÊı¾İµÄÂ·¾¶
-% Nm_Vd = [];%´æ·ÅÎÄ¼şÃûµÄ½á¹¹Ìå
-% Fd_Subs = dir(Pt_Subs);%ÌáÈ¡ËùÓĞÎÄ¼ş
-% fL = size(Fd_Subs,1);%Í³¼ÆÎÄ¼ş¸öÊı
+%è¯¥æ–‡ä»¶çš„ä½œç”¨æ˜¯é€‰å‡º3ä¸ªæ³¢æ®µï¼Œæ˜¯çš„å¼å­   ä¸è¾“å‡ºç›¸å…³æ€§æœ€é«˜
+%è¯¥æ–‡ä»¶çš„ä½œç”¨æ˜¯æ±‚ä¸€é˜¶å¯¼æ•°
+% Pt_Subs = 'E:\yunxia\MLåº”ç”¨\æ— ç“£æµ·æ¡‘åå°„ç‡å‡å€¼';%å­˜æ”¾å¾…å¤„ç†æ•°æ®çš„è·¯å¾„
+% Nm_Vd = [];%å­˜æ”¾æ–‡ä»¶åçš„ç»“æ„ä½“
+% Fd_Subs = dir(Pt_Subs);%æå–æ‰€æœ‰æ–‡ä»¶
+% fL = size(Fd_Subs,1);%ç»Ÿè®¡æ–‡ä»¶ä¸ªæ•°
 % for i = 3:fL
-%     Nm_Vd{i-2,1} = Fd_Subs(i).name;%µ¥¶ÀÌáÈ¡³öÎÄ¼şÃûÊôĞÔ   
+%     Nm_Vd{i-2,1} = Fd_Subs(i).name;%å•ç‹¬æå–å‡ºæ–‡ä»¶åå±æ€§   
 % end
-% %Ò»¸öÎÄ¼şÒ»¸öÎÄ¼şµÄ´¦Àí
+% %ä¸€ä¸ªæ–‡ä»¶ä¸€ä¸ªæ–‡ä»¶çš„å¤„ç†
 % for i=1:1:(fL-2)
-%     %ÏÂÃæÏÈ¶ÁÈ¡txtÎÄ¼ş£¬½«½á¹û´æ·ÅÔÚdatas¾ØÕóÀï
+%     %ä¸‹é¢å…ˆè¯»å–txtæ–‡ä»¶ï¼Œå°†ç»“æœå­˜æ”¾åœ¨datasçŸ©é˜µé‡Œ
 %     nm_vd = Nm_Vd{i,1};
-%     locs = strcat('E:\yunxia\MLÓ¦ÓÃ\ÎŞ°êº£É£·´ÉäÂÊ¾ùÖµ\',nm_vd);
+%     locs = strcat('E:\yunxia\MLåº”ç”¨\æ— ç“£æµ·æ¡‘åå°„ç‡å‡å€¼\',nm_vd);
 % %     ex=importdata(locs);
 % %     datas=ex.data;
 %     datas=importdata(locs);
 %     data = datas.data;
-%     diff = zeros(size(data,1),1);%´æ·ÅÒ»½×µ¼µÄ½á¹û
+%     diff = zeros(size(data,1),1);%å­˜æ”¾ä¸€é˜¶å¯¼çš„ç»“æœ
 %     diff(2:end,1) = data(2:end,2)-data(1:(end-1),2);
 %     data_result = [data,diff];
 %     
-%     savename = strcat('E:\yunxia\MLÓ¦ÓÃ\result\ÎŞ°êº£É£·´ÉäÂÊ¾ùÖµ\',nm_vd,'.xls');%´æÎªxlsÎÄ¼ş
+%     savename = strcat('E:\yunxia\MLåº”ç”¨\result\æ— ç“£æµ·æ¡‘åå°„ç‡å‡å€¼\',nm_vd,'.xls');%å­˜ä¸ºxlsæ–‡ä»¶
 %     %savename(end-3:end) = [];
 %     %save(savename,'datas');
 %     xlswrite(savename,data_result);
@@ -28,24 +28,24 @@
 
 
 
-Local_output = 'D:\yunxia\ML\»Ø¹é ÀÏ¹«\»Ø¹é ÀÏ¹«\data for calibration\baigurang fan\°×¹ÇÈÀchl.xlsx';
+Local_output = 'D:\yunxia\ML\å›å½’\å›å½’\data for calibration\baigurang fan\ç™½éª¨å£¤chl.xlsx';
 datas_out = xlsread(Local_output);
 Fit_out_vector = datas_out(2,:);
-Index_noNaN = find(~isnan(Fit_out_vector));%ÕÒµ½·ÇÈ±Ê§µÄÁĞ
+Index_noNaN = find(~isnan(Fit_out_vector));%æ‰¾åˆ°éç¼ºå¤±çš„åˆ—
 Fit_out_vector = Fit_out_vector(:,Index_noNaN);
 Fit_out_vector = Fit_out_vector';
 
-Local_input = 'D:\yunxia\ML\»Ø¹é ÀÏ¹«\»Ø¹é ÀÏ¹«\data for calibration\baigurang fan\baigurang-fan.mn.xlsx';
+Local_input = 'D:\yunxia\ML\å›å½’\å›å½’\data for calibration\baigurang fan\baigurang-fan.mn.xlsx';
 datas = xlsread(Local_input);
 datas = datas(:,2:end);
 datas = datas(:,Index_noNaN);
-%----------ÕâÀïÎÒÏÈÊÔÒ»ÏÂ²¨³¤´Ó350---500µÄ----------------
+%----------è¿™é‡Œæˆ‘å…ˆè¯•ä¸€ä¸‹æ³¢é•¿ä»350---500çš„----------------
 datas = datas(1:150,:);
 %-----------------------------------------------
 Fit_in_vector = zeros(size(datas,2),1);
 R_matrix = zeros(size(datas,1),size(datas,1),size(datas,1));
 wave_selected = zeros(3,1);
-R_min = 1e4;%ÕâÀï¶ÔÏà¹ØĞÔËæ±ãÁî¸ö´óµÄÖµ
+R_min = 1e4;%è¿™é‡Œå¯¹ç›¸å…³æ€§éšä¾¿ä»¤ä¸ªå¤§çš„å€¼
 for i = 1:1:size(datas,1)
     i
     tic
