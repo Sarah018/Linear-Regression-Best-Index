@@ -11,7 +11,7 @@ The project was implemented and tested in Matlab.
 
 ## 2. Datasets
 
-In this study, we collected fifty-two, fifty-four, fifty-six and fifty-eight leaf samples for K. candel, A. marina, A. corniculatum and S. apetala, respectively, resulting in 220 leaves.
+In this study, we collected fifty-two, fifty-four, fifty-six and fifty-eight leaf samples for Kandelia candel, Avicennia marina, Aegiceras corniculatum, and Sonneratia apetala, respectively, resulting in 220 leaves.
 
 ## 3. Nine commonly used vegetation indexes examined in our study
 
