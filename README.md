@@ -1,10 +1,6 @@
 # Linear-Regression-Best-Index
 Evaluated the performance of 3 billion+ band combinations of 9 vegetation index types by conducting regression analysis to determine the optimal chlorophyll index for chlorophyll content estimation.
 
-
-[Paper](https://www.sciencedirect.com/science/article/pii/S1470160X19304960)
-
-
 ## 1. Requirements
 
 The project was implemented and tested in Matlab. 
@@ -21,6 +17,8 @@ In this study, we collected fifty-two, fifty-four, fifty-six and fifty-eight lea
 
 ![image](https://user-images.githubusercontent.com/41129328/145127939-19f79f02-852c-4f9f-b538-c26dabde1d5b.png)
 
+## Further Reading
+Methodology described in [Zhao, Yunxia, et al., 2021](https://www.sciencedirect.com/science/article/pii/S1470160X19304960)
 
 
 
